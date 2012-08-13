@@ -75,7 +75,13 @@ define({
 
 如果一个url含有`version`并且不为空
 
-那么举例 `"path/b/b.js":{"version":"0.2"} ` ---> `path/b/0.2/b.js`
+举例 `"path/b/b.js":{"version":"0.2"} ` 最终会被---> `path/b/0.2/b.js`
+
+
+那将来项目中如何对文件进行更新呢？
+
+修改`manifest.js` 的 `version` 以及 条目的`version` 
+
 
 
 ### seajs.use 设置
