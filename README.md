@@ -1,10 +1,12 @@
 plugin-storage.js
-
 ======
 
+该插件最核心理想是：
+
+*  彻底磨灭二次访问的网络请求数（主要指代js和css文件），彻底消灭以往304所带来的各种开销（RTT, TCP Connection setup - 3way - handshake）
+*  极限节省用户的流量。
 
 useage
-
 ---------------
 
 
