@@ -220,17 +220,20 @@ seajs基础插件
 
 
 首先先来看seajs正常use一个模块其内部是如何运行的
-
+```js
    seajs.use('./a',function(a){
      // to do something
    })
+```
 
-a.js
+a.js:
 
+```js
   /* a.js */
   define(function(require, exports, module) {
     var b = require(‘./b’)        
   })
+```
 
 1. 首先会从`seajs.config`中读取是否有需要预先加载`preload`的模块，存在则加载并执行，没有则正常执行流程
 2. 接下来使用`resolve`方法，其实质将调用id2Uri方法解析'./a'的绝对路径，即在该过程中['./a'] ---> ['http://path/to/a.js']
