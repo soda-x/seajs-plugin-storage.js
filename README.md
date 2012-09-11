@@ -129,13 +129,13 @@ A同学引用了全局公用组件a，通过打包成一个js的方式发布上�
 《1》** 页面端调用 **
 
 在页面端如下调用`seajs`
-
-    <script src="http://path/??./libs/seajs/1.2.1/sea.js,./startup.js,./libs/seajs/1.2.0/plugin-base.js,./libs/store/0.1/store.js,./libs/seajs/1.2.0/plugin-storage.js,./index.js"></script>
-
+```js
+<script src="http://path/??./libs/seajs/1.2.1/sea.js,./startup.js,./libs/seajs/1.2.0/plugin-base.js,./libs/store/0.1/store.js,./libs/seajs/1.2.0/plugin-storage.js,./index.js"></script>
+```
 须知：
 
 `./startup.js` 为seajs配置文件，相关文件说明见注释
-
+```js
   seajs.config({
     alias: {
       //本地存储封装接口 - 必须！
@@ -149,7 +149,7 @@ A同学引用了全局公用组件a，通过打包成一个js的方式发布上�
     ]
   
   })
-
+```
 `./libs/seajs/1.2.1/plugin-base.js` 
 
 seajs基础插件
@@ -172,7 +172,7 @@ seajs基础插件
 项目启动启动文件
 
 ** 《2》manifest设置（描述文件） **
-
+```js
   ;define({
     //#为不需要版本服务但是需要更新   !为需要版本服务同时需要更新但是无需缓存
     "version" : "12" ,
@@ -184,6 +184,7 @@ seajs基础插件
     "http://localhost/test/SEAJS/index.js":"" ,
     "http://localhost/test/SEAJS/libs/jquery/1.7.2/jquery-debug.js":"#123"
   })
+```
 
 `manifest.js` 是一个非常重要的文件，设计思想上主要参考了manifest，但是它非常非常的简单，它一共才三个可用参数
 
@@ -198,7 +199,7 @@ seajs基础插件
 ######特别强调
 
 **《3》seajs.use**
-
+```js
   // Right !!!!!
   seajs.use('./a/a.js',function(a){
     // to do someting
@@ -208,7 +209,7 @@ seajs基础插件
   seajs.use('./a/0.2/a.js',function(a){
     // to do someting
   })
-
+```
 
 
 > **注意！！！！！！**在seajs调用使用一个模块的时候，无需指明你需要哪个版本的模块，指明这个动作要体现在`manifest`上！
@@ -275,7 +276,7 @@ a.js
 
 场景
 
-```
+```js
 seajs.use(['a', 'b'], ...)
 
 require.async(['a', 'b'], ...)
@@ -289,7 +290,7 @@ define('id', ['a', 'b'], ...)
 
 **特殊说明**
 
-plugin-storage已经自带combo功能，开启与关闭均需要在manifest配置中体现。
+plugin-storage已经自带combo功能，开启与关闭均需要在manifest配置中体现。注意在使用combo时格式需非常严谨，要求收尾不能有折行和空格，并需要有分号进行代码上的分隔
 
 - - - 
 

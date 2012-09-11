@@ -1,6 +1,6 @@
 
 ;define('seajs/plugin-storage', ['./plugin-base', 'store', 'manifest'], function(require) {
-
+  // 注意在使用combo时格式需非常严谨，要求收尾不能有折行和空格，并需要有分号进行代码上的分隔
   var Module = seajs.pluginSDK.Module
 
   var latestManifest = require('manifest')
