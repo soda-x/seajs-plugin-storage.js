@@ -1,7 +1,7 @@
 /**
  * The storage plugin
  */
-;define('seajs/plugin-storage', ['./plugin-base','store','manifest'], function(require) {
+define('seajs/plugin-storage', ['./plugin-base','store','manifest'], function(require) {
 
   var plugin = require('./plugin-base'),
       manifest = require('manifest'),
@@ -94,4 +94,4 @@
     return dirname + '/' + version + '/' + name
   }
 
-})
+});
